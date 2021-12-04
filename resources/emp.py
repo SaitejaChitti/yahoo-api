@@ -124,5 +124,6 @@ class Trade(Resource):
                 d['close']=l2
                 dic[i]=d
             return {"data":dic},201
-        except:
+        except Exception as e:
+            print(e)
             return {"message":"There was an error connecting to user table."},500
