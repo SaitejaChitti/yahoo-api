@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_restful import Api
-from resources.emp import Profile,Age,Chart
+from resources.emp import Yahoo
 from flask_cors import CORS
 
 app=Flask(__name__)
