@@ -42,8 +42,43 @@ class Yahoo(Resource):
                 d['datetime']=l1
                 d['close']=l2
                 dic[i]=d
+                r=[]
+                close =d['close']
+                leng_close = len(close)
+                rebased = 100
+                month = []
+                rebase = []
+                month_count = 0
+                year_count = 0
+                
+                for i in range(leng_close):
+                    month_count += 1
+                    if month_count == 12:
+                        month_count =0
+                        year_count +=1
+
+
+                    cumlative = 1
+                    previous_month_adj = close[i]
+                    try:
+                        next_month_adj = close[i+1]
+                    except IndexError:
+                        next_year = 0
+                
+                    montly_return = (next_month_adj - previous_month_adj) / previous_month_adj # montly returns
+                    month.append(montly_return)
+
+                    rebased =  next_month_adj*100 / l2[0]# rebased to 100
+                    rebase.append(rebased)
+
+                    for j in month:       # cumlative returns
+                        cumlative = cumlative *(1 + j)
+
+                    r.append(rebased)
+                d['close']=r
             return {"data":dic},201
-        except:
+        except Exception as e:
+            print(str(e)+"Error")
             return {"message":"There was an error connecting to user table."},500
 
 class Benchmark(Resource):
