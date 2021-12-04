@@ -5,5 +5,3 @@ pymysql
 gunicorn
 flask-cors
 requests
-json
-datetime
