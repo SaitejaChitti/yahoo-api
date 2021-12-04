@@ -9,12 +9,14 @@ import datetime as dt
 class Yahoo(Resource):
     def get(self):
         try:
+
             url = "https://yfapi.net/v8/finance/spark?interval=1mo&range=8y&symbols=AAPL%2CMSFT%2CAMZN%2CFB%2CTSLA%2CNDX"
 
             querystring = {"symbols":"AAPL,MSFT,AMZN,FB,TSLA,NDX"}
 
+
             headers = {
-                'x-api-key': "uH6EIvpPE33jltEGfjqcq3vv7zpzy0m14vJ5tvJO"
+                'x-api-key': "Q9EWMbLd0f12jUM8HPVyg3m6hgWB9wos2GoGkR11"
                 }
 
             response = requests.request("GET", url, headers=headers, params=querystring)
@@ -22,6 +24,7 @@ class Yahoo(Resource):
 
             data=json.loads(response.text)
             stocks=['AAPL','MSFT','AMZN','FB','TSLA','NDX']
+
             dic={}
             for i in stocks:
                 for j in range(len(data[i]['timestamp'])):
@@ -89,7 +92,7 @@ class Benchmark(Resource):
             querystring = {"symbols":"NDX"}
 
             headers = {
-                'x-api-key': "uH6EIvpPE33jltEGfjqcq3vv7zpzy0m14vJ5tvJO"
+                'x-api-key': "Q9EWMbLd0f12jUM8HPVyg3m6hgWB9wos2GoGkR11"
                 }
 
             response = requests.request("GET", url, headers=headers, params=querystring)
@@ -130,7 +133,7 @@ class Trade(Resource):
             querystring = {"symbols":"AAPL,MSFT,AMZN,FB,TSLA,NDX"}
 
             headers = {
-                'x-api-key': "uH6EIvpPE33jltEGfjqcq3vv7zpzy0m14vJ5tvJO"
+                'x-api-key': "Q9EWMbLd0f12jUM8HPVyg3m6hgWB9wos2GoGkR11"
                 }
 
             response = requests.request("GET", url, headers=headers, params=querystring)
