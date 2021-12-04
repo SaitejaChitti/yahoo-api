@@ -42,6 +42,6 @@ class Yahoo(Resource):
                 d['datetime']=l1
                 d['close']=l2
                 dic[i]=d
-                return {"data":dic},201
+            return {"data":dic},201
         except:
             return {"message":"There was an error connecting to user table."},500
