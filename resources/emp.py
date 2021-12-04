@@ -14,7 +14,7 @@ class Yahoo(Resource):
             querystring = {"symbols":"AAPL,MSFT,AMZN,FB,TSLA,NDX"}
 
             headers = {
-                'x-api-key': "bu1LFtkDIT3Dy3HsaBwnv95yRFyATHIf6sWFzDs6"
+                'x-api-key': "uH6EIvpPE33jltEGfjqcq3vv7zpzy0m14vJ5tvJO"
                 }
 
             response = requests.request("GET", url, headers=headers, params=querystring)
@@ -54,7 +54,7 @@ class Benchmark(Resource):
             querystring = {"symbols":"NDX"}
 
             headers = {
-                'x-api-key': "bu1LFtkDIT3Dy3HsaBwnv95yRFyATHIf6sWFzDs6"
+                'x-api-key': "uH6EIvpPE33jltEGfjqcq3vv7zpzy0m14vJ5tvJO"
                 }
 
             response = requests.request("GET", url, headers=headers, params=querystring)
@@ -95,7 +95,7 @@ class Trade(Resource):
             querystring = {"symbols":"AAPL,MSFT,AMZN,FB,TSLA,NDX"}
 
             headers = {
-                'x-api-key': "bu1LFtkDIT3Dy3HsaBwnv95yRFyATHIf6sWFzDs6"
+                'x-api-key': "uH6EIvpPE33jltEGfjqcq3vv7zpzy0m14vJ5tvJO"
                 }
 
             response = requests.request("GET", url, headers=headers, params=querystring)
